@@ -23,11 +23,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install PyPDF2 langchain tiktoken chromadb openai pytest pytest-mock pydantic nbformat nbclient
+          pip install PyPDF2 langchain tiktoken chromadb openai pytest pytest-mock pydantic nbformat nbclient jupyter
 
       - name: Execute notebook
         run: |
-          python -m nbclient --execute RETO_RAG.ipynb --timeout=600 --output RETO_RAG-executed.ipynb
+          jupyter nbconvert --to notebook --execute RETO_RAG.ipynb --output RETO_RAG-executed.ipynb --ExecutePreprocessor.timeout=600
 
       - name: Validate notebook execution
         run: |

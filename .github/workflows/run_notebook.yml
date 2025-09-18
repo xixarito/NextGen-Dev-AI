@@ -27,7 +27,7 @@ jobs:
 
       - name: Execute notebook
         run: |
-          jupyter nbclient --execute RETO_RAG.ipynb --timeout=600 --output RETO_RAG-executed.ipynb
+          jupyter nbconvert --to notebook --execute RETO_RAG.ipynb --output RETO_RAG-executed.ipynb --ExecutePreprocessor.timeout=600
 
       - name: Validate notebook execution
         run: |

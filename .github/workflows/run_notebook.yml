@@ -27,6 +27,7 @@ jobs:
 
       - name: Execute notebook
         run: |
+          cd "modulo_uno"
           jupyter nbconvert --to notebook --execute RETO_RAG.ipynb --output RETO_RAG-executed.ipynb --ExecutePreprocessor.timeout=600
 
       - name: Validate notebook execution

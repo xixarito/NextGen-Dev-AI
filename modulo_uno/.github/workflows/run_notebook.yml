@@ -1,0 +1,34 @@
+name: Run RETO_RAG Notebook
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyPDF2 langchain tiktoken chromadb openai pytest pytest-mock pydantic nbformat nbclient
+
+      - name: Execute notebook
+        run: |
+          python -m nbclient --execute RETO_RAG.ipynb --timeout=600 --output RETO_RAG-executed.ipynb
+
+      - name: Validate notebook execution
+        run: |
+          grep '"traceback":' RETO_RAG-executed.ipynb && exit 1 || echo "Notebook executed without errors"

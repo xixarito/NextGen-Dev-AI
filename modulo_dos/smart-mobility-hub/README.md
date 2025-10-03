@@ -199,9 +199,46 @@ docker-compose exec backend pytest -v
 # Ejecutar pruebas en modo silencioso
 docker-compose exec backend pytest -q
 
-# Ejecutar pruebas con cobertura
+# Ejecutar pruebas con cobertura de código
 docker-compose exec backend pytest --cov=app tests/
 ```
+
+**📊 Resumen de Tests Disponibles:**
+- **18 tests** implementados cubriendo:
+  - ✅ **Autenticación** - Login, tokens JWT, validación de credenciales
+  - ✅ **API de usuarios** - Obtener información del usuario actual
+  - ✅ **API de datos IoT** - Crear y listar datos de sensores
+  - ✅ **Validación de esquemas** - Validación de coordenadas, campos requeridos
+  - ✅ **Seguridad** - Hash de contraseñas, generación de tokens
+  - ✅ **Casos de error** - Autenticación fallida, datos inválidos
+
+**🚀 Todos los tests pasan exitosamente:**
+```
+====== 18 passed, 5 warnings in 5.54s ======
+```
+
+**📊 Cobertura de Código Actual:**
+```
+---------- coverage: platform linux, python 3.11.13-final-0 ----------
+Name                   Stmts   Miss  Cover
+------------------------------------------
+app/config.py             18      0   100%
+app/database.py            6      0   100%
+app/deps.py               26      8    69%
+app/errors.py             13      3    77%
+app/main.py               20      5    75%
+app/models.py             19      0   100%
+app/routers/auth.py       15      0   100%
+app/routers/iot.py        22      3    86%
+app/routers/users.py       9      0   100%
+app/schemas.py            27      0   100%
+app/security.py           13      0   100%
+app/seed.py                9      5    44%
+------------------------------------------
+TOTAL                    197     24    88%
+```
+
+**✅ Excelente cobertura del 88% del código total**
 
 ## 🛠️ Desarrollo
 

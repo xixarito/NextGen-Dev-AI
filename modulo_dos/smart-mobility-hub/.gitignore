@@ -1,0 +1,448 @@
+# ===========================
+# Smart Mobility Hub - .gitignore
+# ===========================
+
+# ===========================
+# ARCHIVOS DE CREDENCIALES Y CONFIGURACIÓN SENSIBLE
+# ===========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.backup
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+config/secrets/
+jwt_secret*
+database_password*
+
+# ===========================
+# DOCKER Y CONTENEDORES
+# ===========================
+# Volúmenes de Docker
+**/data/
+**/volumes/
+docker-compose.override.yml
+docker-compose.local.yml
+
+# ===========================
+# NODE.JS Y FRONTEND
+# ===========================
+# Dependencias
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build output
+dist/
+dist-ssr/
+build/
+out/
+
+# Cache y archivos temporales
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+*.tsbuildinfo
+.eslintcache
+.vite/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output
+
+# Logs
+logs/
+*.log
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# VS Code settings específicos del usuario
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/*.code-snippets
+
+# ===========================
+# PYTHON Y BACKEND
+# ===========================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ===========================
+# BASE DE DATOS
+# ===========================
+# PostgreSQL
+*.sql.backup
+*.dump
+*.bak
+
+# SQLite
+*.sqlite
+*.sqlite3
+*.db
+
+# MongoDB
+*.mongorc.js
+
+# Archivos de backup de BD
+database_backups/
+backups/
+*.backup
+
+# ===========================
+# ARCHIVOS DEL SISTEMA OPERATIVO
+# ===========================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===========================
+# IDEs Y EDITORES
+# ===========================
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.template.json
+
+# JetBrains IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+*~
+tags
+[._]*.un~
+
+# ===========================
+# ARCHIVOS DE LOGS Y TEMPORALES
+# ===========================
+logs/
+*.log
+*.log.*
+temp/
+tmp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ===========================
+# ARCHIVOS DE TESTING
+# ===========================
+# Test results
+test-results/
+coverage/
+.coverage
+.pytest_cache/
+.tox/
+
+# ===========================
+# ARCHIVOS DE CERTIFICADOS Y SEGURIDAD
+# ===========================
+*.cert
+*.crt
+*.der
+*.key
+*.p7b
+*.p7c
+*.p12
+*.pfx
+*.pem
+*.csr
+*.cer
+ssl/
+certificates/
+private_keys/
+
+# ===========================
+# ARCHIVOS DE BACKUP Y VERSIONADO
+# ===========================
+*.backup
+*.bak
+*.orig
+*.rej
+*.patch
+*~
+.#*
+
+# ===========================
+# ARCHIVOS ESPECÍFICOS DEL PROYECTO
+# ===========================
+# Archivos de datos de prueba
+test_data/
+sample_data/
+seed_data/
+
+# Archivos de documentación generados
+docs/build/
+documentation/generated/
+
+# Archivos de migración temporal
+migrations/temp/
+
+# Cache del proyecto
+.cache/
+cache/
+
+# ===========================
+# ARCHIVOS DE DEPENDENCIAS ESPECÍFICAS
+# ===========================
+# Chart.js cache
+chart.js.cache
+
+# Webpack
+.webpack/
+
+# Vite
+vite.config.js.timestamp-*
+
+# ===========================
+# NOTAS IMPORTANTES
+# ===========================
+# Este .gitignore está diseñado para:
+# 1. Proteger credenciales y información sensible
+# 2. Evitar archivos de build y dependencias
+# 3. Excluir archivos temporales y de cache
+# 4. Mantener el repositorio limpio y seguro
+#
+# RECUERDA:
+# - Nunca subas archivos .env con credenciales reales
+# - Usa .env.example para documentar variables necesarias
+# - Mantén separados los entornos de desarrollo y producción
+# - Revisa regularmente este archivo para actualizaciones
